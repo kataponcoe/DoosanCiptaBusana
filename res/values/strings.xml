@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Doosan Cipta Busana</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tntngapp">Tentang Aplikasi</string>
+    <string name="tntngpengembang">Tentang Pengembang</string>
+    <string name="keluar">Keluar</string>
+    <string name="doosankembali">Tekan Kembali untuk Keluar dari Tentang Aplikasi!</string>
+    <string name="tntang_title">Tentang Aplikasi</string>
+    <string name="tntang_isi">Aplikasi Doosan Cipta Busana ini dibuat oleh Seorang anak payah yang bernama Arief Wardhana, Terimakasih sudah mengadopsi aplikasi sederhana ini\n\nmakasi banget untuk :\n\n- Mas Adriyadi Savana Udah bantuin debug aplikasi ini\n- Gembul si Kucing yang suka meredakan setres disaat melihat tingkah konyolnya\n- Ibunda Tercinta Dewi Retno Wahyuningsih dan Bapake Tercinta Wardjo Suwandi yang ngga habis-habisnya nelpon buat siram tanaman dan mandi ngasi uang jajan dan nafkahin buat anak setiap harinya\n- allah swt yang maha kuasa yang telah membekali ilmu kepada poncoe\n- Damoy (Adam Iqbal Pradana) yang rumah nya udah diobrak-abrik sama poncoe cuma karna mau nginep dan ngerjain program dirumah adam hehe\n\nTerimakasih untuk PT Doosan Cipta Busana :\n\n- Bu Yulandari\n- Bu Milla Marketing 5\n- Bu Yuni Marketing 5\n- Mbak Reva dan Mbak Nidia\n- Pak Bos Swapnil Katailiha\n- Pakde Kantin yang berbaik hati\n- Mbak-Mbak Iventory Marketing 5 yang cantek-cantek hehe\n- Seluruh Staf dan Karyawan\n\nTerimakasih Untuk SMK Telesandi :\n\n- Bu Sari Gumbira selaku kepala program jurusan rekayasa perangkat lunak\n- Bu Marissa yang gak habis-habisnya memberikan ide-ide\n- Bu Tanti Apriani yang selalu ceria dalam menjalani kehidupannya sebagai guru\n- Bu Febryani Pembimbing yang sangat baik hati\n- Bu Ine Yulianti seorang guru penguji yang super wahh dengan kemampuan Analisis EYD yang super wah\n
+        - Bu Tiara Kusuma Dewi seorang penguji keahlian\n- Dreamcode Developer dan Syntax Progamjasa kalian memang luar biasa makasi udah dikasi kesempatan bergabung sampe sekarang\n- Leo, Nanda sama Aina makasi untuk 3 bulannya di doosan\n\n entahlah, sisanya isi sendiri ya</string>
+    <string name="tntangdev_title">Tentang Pengembang</string>
+    <string name="tntangdev_isi">Learn to Code, Change The World. Dengan kamu belajar kode program, kamu dapat mengubah Dunia sialan ini Menjadi Dunia yang lebih baik lagi.. Seorang anak payah yang bercita-cita ingin menjadi seorang progammer dan membuat peka cewek yang ia sukai\n\nNama : Arief Wardhana (Poncoe)\nNIS : 141510248\nKompetensi Keahlian : Rekayasa Perangkat Lunak\n\nSMK TELEKOMUNIKASI TELESANDI BEKASI #RPLTELS7\n\nTerjadi Bug? Silahkan Kirim Keluhan Bug ke email poncoe4mac@gmail.com</string>
+    <string name="kembali">Kembali</string>
+
+    
+</resources>
