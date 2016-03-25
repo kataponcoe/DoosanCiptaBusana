@@ -58,7 +58,7 @@ public class ListAdapter extends BaseAdapter
 		public TextView menuName; 
 		
 		public ViewHolder(View v) {
-			menuName = (TextView) v.findViewById(R.id.row)
+			menuName = (TextView) v.findViewById(R.id.row);
 		}
 	}
 
