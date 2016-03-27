@@ -16,35 +16,45 @@ limitations under the License.
 
 package id.kataponcoe.doosanciptabusana;
 
+import id.kataponcoe.doosanciptabusana.ListAdapter.ListAction;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import id.kataponcoe.doosanciptabusana.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-public class MainActivity extends ListActivity {
-
+public class MainActivity extends Activity {
+	
+	private final String SEJARAH_DOOSAN_CIPTA = "Sejarah Doosan Cipta";
+	private final String ISTILAH_KAMUS_GARMENT = "Istilah Kamus Garment";
+	private final String LOKASI_DOOSAN_CIPTA = "Letak Peta Doosan Cipta";
+	private final String LOKASI_SMK_TELESANDI_BEKASI = "Letak Peta SMK Telesandi bekasi";
+	private final String WEB_TELESANDI = "Situs Resmi SMK Telesandi bekasi";
+	private final String TENTANG_APLIKASI = "Tentang Aplikasi";
+	private final String TENTANG_PENGEMBANG = "Tentang Pengembang";
+	private final String KELUAR = "Keluar";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		SimpleAdapter adapter = new SimpleAdapter(this, getData(),
-				android.R.layout.simple_list_item_1, new String[] { "title" },
-				new int[] { android.R.id.text1 });
-		setListAdapter(adapter);
-		getListView().setScrollbarFadingEnabled(false);
+		setContentView(R.layout.main_activity);
+		ListView list = (ListView)findViewById(R.id.list_item);
+		ListAdapter adapter = new ListAdapter(getData());
+		adapter.setOnListActionClicked(new ListAction() {
+			
+			@Override
+			public void openMenu(String menuName) {
+				startActivity(menuName);
+			}
+		});
+		list.setAdapter(adapter);
 	}
 
   @Override
@@ -68,7 +78,7 @@ public class MainActivity extends ListActivity {
 				break;
                 
 			case 2:
-				 startActivity(new Intent(this, MenuLogin.class));
+				 finish();
 				break;
 
           default:
@@ -94,33 +104,34 @@ public class MainActivity extends ListActivity {
 				}) .show();
 			}
 
-  @SuppressWarnings("unchecked")
-  @Override
-  protected void onListItemClick(ListView l, View v, int position, long id) {
-    Map<String, Object> map = (Map<String, Object>) l.getItemAtPosition(position);
-    Intent intent = new Intent(this, (Class<? extends Activity>) map.get("activity"));
-    startActivity(intent);
-  }
-
-  private List<? extends Map<String, ?>> getData() {
-    List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
-    addItem(data, "Sejarah Doosan Cipta", FlipSejarahDoosan.class);
-    addItem(data, "Istilah Kamus Garment", FlipKamusGarment.class);
-    addItem(data, "Letak Peta Doosan Cipta", MapsDoosan.class);
-    addItem(data, "Letak Peta SMK Telesandi bekasi", MapsTels.class);
-    addItem(data, "Situs Resmi SMK Telesandi bekasi", WebsiteTelesandi.class);
-    addItem(data, "Tentang Aplikasi", TentangAplikasi.class);
-    addItem(data, "Tentang Pengembang", TentangPengembang.class);
-    addItem(data, "Keluar", MenuLogin.class);
+	private void startActivity(String menuList)
+	{   
+		switch (menuList) {
+		case SEJARAH_DOOSAN_CIPTA: startActivity(new Intent(MainActivity.this, FlipSejarahDoosan.class)); break;
+		case ISTILAH_KAMUS_GARMENT: startActivity(new Intent(MainActivity.this, FlipKamusGarment.class)); break;
+		case LOKASI_DOOSAN_CIPTA: startActivity(new Intent(MainActivity.this, MapsDoosan.class)); break;
+		case LOKASI_SMK_TELESANDI_BEKASI: startActivity(new Intent(MainActivity.this, MapsTels.class)); break;
+		case WEB_TELESANDI: startActivity(new Intent(MainActivity.this, WebsiteTelesandi.class)); break;
+		case TENTANG_APLIKASI: startActivity(new Intent(MainActivity.this, TentangAplikasi.class)); break;
+		case TENTANG_PENGEMBANG: startActivity(new Intent(MainActivity.this, TentangPengembang.class)); break;
+		default: finish(); break;
+		}
+	}
+  
+  
+  private List<String> getData() 
+  {
+    List<String> data = new ArrayList<String>();  
+    data.add(SEJARAH_DOOSAN_CIPTA);
+    data.add(ISTILAH_KAMUS_GARMENT);
+    data.add(LOKASI_DOOSAN_CIPTA);
+    data.add(LOKASI_SMK_TELESANDI_BEKASI);
+    data.add(WEB_TELESANDI);
+    data.add(TENTANG_APLIKASI);
+    data.add(TENTANG_PENGEMBANG);
+    data.add(KELUAR);
     
     return data;
   }
 
-  private void addItem(List<Map<String, Object>> data, String title,
-                       Class<? extends Activity> activityClass) {
-    Map<String, Object> map = new HashMap<String, Object>();
-    map.put("title", data.size() + ". " + title);
-    map.put("activity", activityClass);
-    data.add(map);
-  }
 }
